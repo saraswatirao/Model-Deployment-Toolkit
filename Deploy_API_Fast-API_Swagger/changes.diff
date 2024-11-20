@@ -1,0 +1,29 @@
+diff --git a/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/README.md b/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/README.md
+index b7d1667..a42ed8b 100644
+--- a/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/README.md	
++++ b/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/README.md	
+@@ -1,8 +1,8 @@
+ ## Part 4 Local Setup
+ 
+ 1. `pip install poetry` (or safer, follow the instructions: https://python-poetry.org/docs/#installation)
+-2. Install dependencies `cd` into the directory where the `pyproject.toml` is located then `poetry install`
+-3. [UNIX]: Run the FastAPI server via poetry with the bash script: `poetry run ./run.sh`
++2. Install dependencies `cd` into the directory where the `pyproject.toml` is located then `poetry install`. NOTE: if having troubles (recent versions like python 3.12 may show errors), you can switch to a different python version by `poetry env use <PYTHON_BINARY>`, for example `poetry env use $(which python3)`. If you are having trouble with this, ensure you are using a 3.8.x Python version (`python --version`).
++3. [UNIX]: Run the FastAPI server via poetry with the bash script: first make the run file executable with `chmod +x run.sh` and then `poetry run ./run.sh`
+ 4. [WINDOWS]: Run the FastAPI server via poetry with the Python command: `poetry run python app/main.py`
+ 5. Open http://localhost:8001/
+ 
+diff --git a/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/run.sh b/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/run.sh
+old mode 100644
+new mode 100755
+index a85b460..b7a24dd
+--- a/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/run.sh	
++++ b/Demo-1_ REST API_ Restaurant-add-put-and-delete-endpoints-Fast-API/run.sh	
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-export APP_MODULE=${APP_MODULE-app.main:app}
++export APP_MODULE=${APP_MODULE-main:app}
+ export HOST=${HOST:-0.0.0.0}
+ export PORT=${PORT:-8001}
+ 
